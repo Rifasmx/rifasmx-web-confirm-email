@@ -1,8 +1,7 @@
 // ===== CONFIG =====
 const SUPABASE_URL = 'https://ncggoklzrhetahayazct.supabase.co';
-const SUPABASE_ANON_KEY = 'TU_ANON_KEY_AQUI'; // se reemplaza después
+const SUPABASE_ANON_KEY = 'sb_publishable_PvOFNe6Zmo_bMu6oC6Z1bQ_3Hzls07d';
 const APP_DEEP_LINK = 'rifasmx://login';
-
 // ===== UI HELPERS =====
 function showState(stateId) {
   document.querySelectorAll('.state').forEach(el => el.classList.add('hidden'));
