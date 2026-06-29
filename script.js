@@ -41,9 +41,22 @@ async function init() {
   
   console.log('Params recibidos:', params);
   
-  // Caso 1: Error explícito de Supabase
+// Caso 1: Error explícito de Supabase
   if (params.error || params.error_description) {
-    showError(params.error_description || params.error || 'El enlace no es válido.');
+    const errMsg = (params.error_description || params.error || '').toLowerCase();
+    let userMsg;
+    
+    if (errMsg.includes('expired') || errMsg.includes('invalid')) {
+      userMsg = 'Este enlace ya fue usado o expiró. Si tu correo ya está confirmado, abre la app e inicia sesión.';
+    } else if (errMsg.includes('not found')) {
+      userMsg = 'No encontramos esta solicitud. Por favor solicita un nuevo enlace desde la app.';
+    } else if (errMsg.includes('rate limit')) {
+      userMsg = 'Demasiados intentos. Espera unos minutos antes de intentar de nuevo.';
+    } else {
+      userMsg = 'Algo salió mal. Por favor solicita un nuevo enlace desde la app.';
+    }
+    
+    showError(userMsg);
     return;
   }
   
