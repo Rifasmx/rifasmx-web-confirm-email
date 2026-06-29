@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  max-width: 560px;
+  width: 100%;
+}
+
+/* Header verde */
+.header {
+  background-color: #006847;
+  padding: 32px 40px 24px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.tagline {
+  color: rgba(255,255,255,0.80);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* Barra bandera mexicana */
+.flag-bar {
+  display: flex;
+  height: 5px;
+}
+
+.flag-green {
+  flex: 1;
+  background-color: #006847;
+}
+
+.flag-white {
+  flex: 1;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.flag-red {
+  flex: 1;
+  background-color: #CE1126;
+}
+
+/* Contenido */
+.content {
+  padding: 40px;
+}
+
+.state {
+  text-align: center;
+}
+
+.state.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.state p {
+  font-size: 15px;
+  color: #444444;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Iconos circulares */
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.icon-circle.success {
+  background-color: #006847;
+}
+
+.icon-circle.error {
+  background-color: #CE1126;
+}
+
+/* Botón */
+.btn-primary {
+  display: inline-block;
+  background-color: #006847;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 40px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #005538;
+}
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 16px !important;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #006847;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Inputs */
+input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="password"]:focus {
+  border-color: #006847;
+}
+
+/* Error inline */
+.error {
+  background-color: #fff5f5;
+  border-left: 4px solid #CE1126;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  color: #CE1126;
+  font-size: 14px;
+  text-align: left;
+}
+
+.error.hidden {
+  display: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #f9f9f9;
+  border-top: 1px solid #eeeeee;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 6px;
+}
+
+.footer a {
+  color: #006847;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .header {
+    padding: 24px 20px 18px;
+  }
+  
+  .content {
+    padding: 28px 20px;
+  }
+  
+  .footer {
+    padding: 16px 20px;
+  }
+  
+  .btn-primary {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
