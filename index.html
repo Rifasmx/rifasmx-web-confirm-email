@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RifasMX</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card">
+    <!-- Header verde -->
+    <div class="header">
+      <div class="logo">🎟 RifasMX</div>
+      <p class="tagline">La plataforma de rifas más confiable de México</p>
+    </div>
+
+    <!-- Barra bandera -->
+    <div class="flag-bar">
+      <div class="flag-green"></div>
+      <div class="flag-white"></div>
+      <div class="flag-red"></div>
+    </div>
+
+    <!-- Contenido dinámico -->
+    <div class="content">
+      <!-- Estado: cargando -->
+      <div id="loading" class="state">
+        <div class="spinner"></div>
+        <p>Procesando...</p>
+      </div>
+
+      <!-- Estado: signup confirmado -->
+      <div id="signup-success" class="state hidden">
+        <div class="icon-circle success">✓</div>
+        <h1>¡Correo confirmado!</h1>
+        <p>Tu cuenta de RifasMX ya está activa. Ya puedes regresar a la app e iniciar sesión.</p>
+        <a id="open-app-signup" class="btn-primary" href="rifasmx://login">Abrir RifasMX</a>
+        <p class="hint">Si no se abre automáticamente, abre la app desde tu pantalla de inicio.</p>
+      </div>
+
+      <!-- Estado: recovery (mostrar formulario) -->
+      <div id="recovery-form" class="state hidden">
+        <h1>Restablece tu contraseña</h1>
+        <p>Ingresa tu nueva contraseña para tu cuenta de RifasMX.</p>
+        <input id="new-password" type="password" placeholder="Nueva contraseña (mín. 6 caracteres)" minlength="6" />
+        <input id="confirm-password" type="password" placeholder="Confirma tu contraseña" minlength="6" />
+        <div id="recovery-error" class="error hidden"></div>
+        <button id="submit-recovery" class="btn-primary">Cambiar contraseña</button>
+      </div>
+
+      <!-- Estado: recovery exitoso -->
+      <div id="recovery-success" class="state hidden">
+        <div class="icon-circle success">✓</div>
+        <h1>¡Contraseña actualizada!</h1>
+        <p>Tu contraseña se cambió correctamente. Ya puedes regresar a la app e iniciar sesión.</p>
+        <a class="btn-primary" href="rifasmx://login">Abrir RifasMX</a>
+      </div>
+
+      <!-- Estado: error -->
+      <div id="error-state" class="state hidden">
+        <div class="icon-circle error">!</div>
+        <h1>Algo salió mal</h1>
+        <p id="error-message">El enlace expiró o ya fue usado. Por favor solicita uno nuevo desde la app.</p>
+        <a class="btn-primary" href="rifasmx://login">Abrir RifasMX</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>RifasMX · Ciudad de México, México</p>
+      <p>¿Tienes dudas? Escríbenos a <a href="mailto:soporte@rifasmx.mx">soporte@rifasmx.mx</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
